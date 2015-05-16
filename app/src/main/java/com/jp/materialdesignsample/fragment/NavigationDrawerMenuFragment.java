@@ -44,6 +44,7 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
         list.add("Text field Sample");
         list.add("Dialog Sample");
         list.add("Image Loading Pattern");
+        list.add("Database Sample");
 
         return list;
     }
@@ -62,6 +63,9 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
                 break;
             case 3:
                 navigateTo(new ImageLoadingPatternFragment(), true);
+                break;
+            case 4:
+                navigateTo(new DatabaseSampleFragment(), true);
                 break;
             default:
                 break;

@@ -6,12 +6,12 @@ import android.widget.TextView;
 
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.adapter.base.BaseListAdapter;
+import com.jp.materialdesignsample.domain.model.User;
 
 import java.util.List;
 
-public class SingleLineListAdapter extends BaseListAdapter<String> {
-
-    public SingleLineListAdapter(Context context, List<String> itemList) {
+public class UserListAdapter extends BaseListAdapter<User> {
+    public UserListAdapter(Context context, List<User> itemList) {
         super(context, itemList);
     }
 
@@ -22,20 +22,20 @@ public class SingleLineListAdapter extends BaseListAdapter<String> {
 
     @Override
     protected Object bindViewHolder(View view) {
-        SingleLineRowViewHolder viewHolder = new SingleLineRowViewHolder();
-
+        UserViewHolder viewHolder = new UserViewHolder();
         viewHolder.mText = (TextView) view.findViewById(R.id.m_list_row_text);
 
         return viewHolder;
     }
 
     @Override
-    protected void loadData(Object viewHolder, String text) {
-        SingleLineRowViewHolder rowViewHolder = (SingleLineRowViewHolder) viewHolder;
-        rowViewHolder.mText.setText(text);
+    protected void loadData(Object viewHolder, User user) {
+        UserViewHolder userViewHolder = (UserViewHolder) viewHolder;
+
+        userViewHolder.mText.setText(String.format("%s %s",user.Username, user.getId().toString()));
     }
 
-    private static class SingleLineRowViewHolder {
+    private static class UserViewHolder {
         public TextView mText;
     }
 }

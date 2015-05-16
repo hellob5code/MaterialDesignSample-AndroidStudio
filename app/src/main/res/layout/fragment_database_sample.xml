@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/username_edtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            android:id="@+id/add_button"
+            style="@style/m_light_primary_flat_button_material_style"
+            android:text="Add"/>
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            android:id="@+id/remove_button"
+            style="@style/m_light_primary_flat_button_material_style"
+            android:text="Remove"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/user_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
