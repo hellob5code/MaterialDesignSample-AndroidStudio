@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/load_image_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Image" />
+
+    <Button
+        android:id="@+id/clear_image_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Image" />
+
+    <com.jp.materialdesignsample.view.material.MaterialImageView
+        android:id="@+id/material_loading_pattern_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/m_debug_shadow"
+        android:scaleType="centerCrop" />
+
+</LinearLayout>

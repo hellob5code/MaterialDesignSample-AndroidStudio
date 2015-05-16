@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetTop="@dimen/m_floating_mini_button_inset"
+    android:insetBottom="@dimen/m_floating_mini_button_inset"
+    android:insetLeft="@dimen/m_floating_mini_button_inset"
+    android:insetRight="@dimen/m_floating_mini_button_inset">
+    <shape android:shape="oval">
+        <size
+            android:width="@dimen/m_floating_mini_button_size"
+            android:height="@dimen/m_floating_mini_button_size" />
+        <corners android:radius="@dimen/m_floating_mini_button_radius" />
+        <solid android:color="@color/m_primary_color700" />
+    </shape>
+</inset>

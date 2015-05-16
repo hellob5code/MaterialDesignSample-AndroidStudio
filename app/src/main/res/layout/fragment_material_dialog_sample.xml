@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/simple_system_dialog_button"
+        style="@style/m_light_raised_button_material_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple System Dialog" />
+
+    <Button
+        android:id="@+id/complicated_system_dialog_button"
+        style="@style/m_light_raised_button_material_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complicated System Dialog" />
+
+    <Button
+        android:id="@+id/simple_alert_dialog_button"
+        style="@style/m_light_raised_button_material_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple Alert Dialog" />
+
+    <Button
+        android:id="@+id/complicated_alert_dialog_button"
+        style="@style/m_light_raised_button_material_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complicated Alert Dialog" />
+</LinearLayout>

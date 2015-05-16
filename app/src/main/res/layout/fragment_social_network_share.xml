@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/title_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description" />
+
+    <Button
+        android:id="@+id/choose_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Image" />
+
+    <TextView
+        android:id="@+id/image_path_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/share_facebook_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share on Facebook" />
+
+    <Button
+        android:id="@+id/share_twitter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share on Twitter" />
+
+    <Button
+        android:id="@+id/share_instagram_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share on Instagram" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ratio16x9" />
+
+        <ImageView
+            android:id="@+id/selected_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside" />
+    </FrameLayout>
+
+
+</LinearLayout>

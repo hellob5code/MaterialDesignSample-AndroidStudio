@@ -1,0 +1,125 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="windowActionBar">false</item>-->
+
+    </style>
+
+    <style name="m_toolbar_navigate_button_style" parent="m_image_button_material_style">
+        <item name="android:layout_marginLeft">@dimen/m_toolbar_horizontal_margin</item>
+    </style>
+
+    <style name="m_toolbar_title_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/m_toolbar_title_left_margin</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="m_drawer_menu_user_avatar_style">
+        <item name="android:layout_width">@dimen/m_drawer_menu_avatar_image_size</item>
+        <item name="android:layout_height">@dimen/m_drawer_menu_avatar_image_size</item>
+        <item name="android:layout_marginLeft">@dimen/m_drawer_menu_margin</item>
+        <item name="android:layout_marginTop">@dimen/m_drawer_menu_margin</item>
+        <item name="android:background">@drawable/shape_menu_avatar_image</item>
+    </style>
+
+    <style name="m_drawer_menu_user_email_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="m_image_button_material_style">
+        <item name="android:layout_width">@dimen/m_image_button_width</item>
+        <item name="android:layout_height">@dimen/m_image_button_height</item>
+        <item name="android:padding">@dimen/m_image_button_padding</item>
+        <item name="android:background">@color/m_clear</item>
+    </style>
+
+    <style name="m_button_material_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/m_button_height</item>
+        <item name="android:layout_marginLeft">@dimen/m_button_vertical_margin</item>
+        <item name="android:layout_marginRight">@dimen/m_button_vertical_margin</item>
+        <item name="android:paddingLeft">@dimen/m_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/m_button_vertical_padding</item>
+        <item name="android:minWidth">@dimen/m_button_min_width</item>
+        <item name="android:textSize">@dimen/m_button_text_size</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="m_dark_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_dark_flat_button</item>
+        <item name="android:background">@drawable/bg_dark_flat_button</item>
+    </style>
+
+    <style name="m_dark_primary_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_primary_flat_button</item>
+        <item name="android:background">@drawable/bg_dark_flat_button</item>
+    </style>
+
+    <style name="m_dark_primary_raised_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_dark_flat_button</item>
+        <item name="android:background">@drawable/bg_dark_primary_raised_button</item>
+    </style>
+
+    <style name="m_light_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_light_flat_button</item>
+        <item name="android:background">@drawable/bg_light_flat_button</item>
+    </style>
+
+    <style name="m_light_primary_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_primary_flat_button</item>
+        <item name="android:background">@drawable/bg_light_flat_button</item>
+    </style>
+
+    <style name="m_light_raised_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_light_raised_button</item>
+        <item name="android:background">@drawable/bg_light_raised_button</item>
+    </style>
+
+    <style name="m_floating_button_material_style">
+        <item name="android:layout_width">@dimen/m_floating_button_size</item>
+        <item name="android:layout_height">@dimen/m_floating_button_size</item>
+        <item name="android:padding">@dimen/m_floating_button_image_padding</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/bg_floating_button</item>
+    </style>
+
+    <style name="m_floating_mini_button_material_style">
+        <item name="android:layout_width">@dimen/m_floating_mini_button_touch_area</item>
+        <item name="android:layout_height">@dimen/m_floating_mini_button_touch_area</item>
+        <item name="android:padding">@dimen/m_floating_mini_button_image_padding</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/bg_floating_mini_button</item>
+    </style>
+
+    <style name="m_dialog_title_layout_material_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/m_dialog_title_bottom_margin</item>
+        <item name="android:layout_marginLeft">@dimen/m_dialog_text_margin</item>
+        <item name="android:layout_marginRight">@dimen/m_dialog_text_margin</item>
+    </style>
+
+    <style name="m_dialog_message_layout_material_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/m_dialog_text_margin</item>
+        <item name="android:layout_marginLeft">@dimen/m_dialog_text_margin</item>
+        <item name="android:layout_marginRight">@dimen/m_dialog_text_margin</item>
+    </style>
+
+    <style name="m_dialog_button_layout_material_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">end</item>
+        <item name="android:layout_marginLeft">@dimen/m_dialog_button_margin</item>
+        <item name="android:layout_marginRight">@dimen/m_dialog_button_margin</item>
+    </style>
+
+</resources>

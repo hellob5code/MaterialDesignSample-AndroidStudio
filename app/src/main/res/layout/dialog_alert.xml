@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/m_dialog_width"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/m_dialog_text_margin">
+
+    <FrameLayout
+        android:id="@+id/dialog_title_layout"
+        style="@style/m_dialog_title_layout_material_style"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/dialog_title_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_message_layout"
+        style="@style/m_dialog_message_layout_material_style">
+
+        <TextView
+            android:id="@+id/dialog_message_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_button_layout"
+        style="@style/m_dialog_button_layout_material_style">
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            android:id="@+id/dialog_negative_button"
+            style="@style/m_light_primary_flat_button_material_style"
+            android:visibility="gone" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            android:id="@+id/dialog_positive_button"
+            style="@style/m_light_primary_flat_button_material_style" />
+
+    </LinearLayout>
+</LinearLayout>

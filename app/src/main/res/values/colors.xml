@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Debug colors -->
+    <color name="m_debug_solid_red">#ffff4444</color>
+    <color name="m_debug_alpha_red">#8f44</color>
+    <color name="m_debug_solid_green">#ff99cc00</color>
+    <color name="m_debug_alpha_green">#8899cc00</color>
+    <color name="m_debug_solid_blue">#ff33b5e5</color>
+    <color name="m_debug_alpha_blue">#8833b5e5</color>
+    <color name="m_debug_shadow">#4000</color>
+
+    <color name="m_clear">#0000</color>
+    <color name="m_white">#ffff</color>
+    <color name="m_white_70">#b2ffffff</color>
+    <color name="m_white_30">#4cffffff</color>
+    <color name="m_white_12">#1fffffff</color>
+    <color name="m_black">#000</color>
+    <color name="m_black_87">#de000000</color>
+    <color name="m_black_54">#8a000000</color>
+    <color name="m_black_26">#42000000</color>
+    <color name="m_black_12">#1f000000</color>
+
+    <!-- App colors -->
+    <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
+    <color name="m_primary_color500">#3f51b5</color>
+    <color name="m_primary_color600">#3949ab</color>
+    <color name="m_primary_color700">#303f9f</color>
+
+    <!-- Button colors -->
+    <color name="m_dark_flat_button_normal_text_color">@color/m_white</color>
+    <color name="m_dark_flat_button_disabled_text_color">@color/m_white_30</color>
+
+    <color name="m_dark_flat_button_normal_bg_color">@color/m_clear</color>
+    <color name="m_dark_flat_button_hover_bg_color">#26ffffff</color>
+    <color name="m_dark_flat_button_focused_bg_color">#26ffffff</color>
+    <color name="m_dark_flat_button_pressed_bg_color">#40ffffff</color>
+
+    <color name="m_light_button_normal_text_color">@color/m_black_87</color>
+    <color name="m_light_button_disabled_text_color">@color/m_black_26</color>
+
+    <color name="m_light_flat_button_normal_bg_color">@color/m_clear</color>
+    <color name="m_light_flat_button_hover_bg_color">#3999</color>
+    <color name="m_light_flat_button_focused_bg_color">#3999</color>
+    <color name="m_light_flat_button_pressed_bg_color">#6999</color>
+
+    <color name="m_light_raised_button_normal_bg_color">@color/m_black_12</color>
+    <color name="m_light_raised_button_hover_bg_color">@color/m_black_12</color>
+    <color name="m_light_raised_button_focused_bg_color">@color/m_black_12</color>
+    <color name="m_light_raised_button_pressed_bg_color">@color/m_black_26</color>
+    <color name="m_light_raised_button_disabled_bg_color">@color/m_black_12</color>
+
+    <color name="m_primary_flat_button_normal_text_color">#3f51b5</color>
+    <color name="m_primary_flat_button_disabled_text_color">#4c3f51b5</color>
+
+    <color name="m_primary_raised_button_normal_bg_color">@color/m_primary_color500</color>
+    <color name="m_primary_raised_button_hover_bg_color">@color/m_primary_color600</color>
+    <color name="m_primary_raised_button_focused_bg_color">@color/m_primary_color600</color>
+    <color name="m_primary_raised_button_pressed_bg_color">@color/m_primary_color700</color>
+    <color name="m_primary_raised_button_disabled_bg_color">@color/m_white_12</color>
+</resources>

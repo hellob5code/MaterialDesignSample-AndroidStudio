@@ -1,0 +1,56 @@
+<resources>
+    <!-- Status bar -->
+    <dimen name="m_status_bar_height">24dp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="m_toolbar_height">56dp</dimen>
+    <dimen name="m_toolbar_horizontal_margin">4dp</dimen>
+    <dimen name="m_toolbar_title_left_margin">72dp</dimen>
+
+    <!-- Tab bar -->
+    <dimen name="m_status_height">48dp</dimen>
+
+    <!-- Button -->
+    <dimen name="m_button_height">48dp</dimen>
+    <dimen name="m_button_inset">6dp</dimen>
+    <dimen name="m_button_min_width">88dp</dimen>
+    <dimen name="m_button_vertical_margin">4dp</dimen>
+    <dimen name="m_button_vertical_padding">8dp</dimen>
+    <dimen name="m_button_corner_radius">2dp</dimen>
+    <dimen name="m_button_text_size">14dp</dimen>
+
+    <!-- Floating button -->
+    <dimen name="m_floating_button_size">56dp</dimen>
+    <dimen name="m_floating_button_radius">28dp</dimen>
+    <dimen name="m_floating_button_image_padding">16dp</dimen>
+
+    <dimen name="m_floating_mini_button_touch_area">48dp</dimen>
+    <dimen name="m_floating_mini_button_size">40dp</dimen>
+    <dimen name="m_floating_mini_button_radius">20dp</dimen>
+    <dimen name="m_floating_mini_button_inset">4dp</dimen>
+    <dimen name="m_floating_mini_button_image_padding">12dp</dimen>
+
+    <!-- Image button -->
+    <dimen name="m_image_button_width">48dp</dimen>
+    <dimen name="m_image_button_height">@dimen/m_button_height</dimen>
+    <dimen name="m_image_button_padding">12dp</dimen>
+
+    <!-- Drawer menu -->
+    <dimen name="m_drawer_menu_margin">16dp</dimen>
+    <dimen name="m_drawer_menu_avatar_image_size">64dp</dimen>
+    <dimen name="m_drawer_menu_avatar_image_radius">32dp</dimen>
+    <dimen name="m_drawer_menu_user_info_height">48dp</dimen>
+
+    <!-- List view -->
+    <dimen name="m_list_small_layout_height">48dp</dimen>
+    <dimen name="m_list_normal_layout_height">56dp</dimen>
+    <dimen name="m_list_large_layout_height">72dp</dimen>
+    <dimen name="m_list_vertical_padding">16dp</dimen>
+    <dimen name="m_list_single_line_text_bottom_padding">4dp</dimen>
+
+    <!-- Dialog -->
+    <dimen name="m_dialog_width">280dp</dimen>
+    <dimen name="m_dialog_text_margin">24dp</dimen>
+    <dimen name="m_dialog_title_bottom_margin">20dp</dimen>
+    <dimen name="m_dialog_button_margin">8dp</dimen>
+</resources>

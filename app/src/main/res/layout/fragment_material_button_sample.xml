@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dark theme flat button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/m_dark_flat_button_material_style"
+            android:text="button" />
+
+        <Button
+            style="@style/m_dark_flat_button_material_style"
+            android:enabled="false"
+            android:text="disabled" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            style="@style/m_dark_flat_button_material_style"
+            android:text="button" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dark theme primary flat button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/m_dark_primary_flat_button_material_style"
+            android:text="button" />
+
+        <Button
+            style="@style/m_dark_primary_flat_button_material_style"
+            android:enabled="false"
+            android:text="disabled" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            style="@style/m_dark_primary_flat_button_material_style"
+            android:text="button" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dark theme primary raised button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/m_dark_primary_raised_button_material_style"
+            android:text="button" />
+
+        <Button
+            style="@style/m_dark_primary_raised_button_material_style"
+            android:enabled="false"
+            android:text="disabled" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            style="@style/m_dark_primary_raised_button_material_style"
+            android:text="button" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Light theme flat button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/m_light_flat_button_material_style"
+            android:text="button" />
+
+        <Button
+            style="@style/m_light_flat_button_material_style"
+            android:enabled="false"
+            android:text="disabled" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            style="@style/m_light_flat_button_material_style"
+            android:text="button" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Light theme primary flat button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/m_light_primary_flat_button_material_style"
+            android:text="button" />
+
+        <Button
+            style="@style/m_light_primary_flat_button_material_style"
+            android:enabled="false"
+            android:text="disabled" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            style="@style/m_light_primary_flat_button_material_style"
+            android:text="button" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Light theme raised button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/m_light_raised_button_material_style"
+            android:text="button" />
+
+        <Button
+            style="@style/m_light_raised_button_material_style"
+            android:enabled="false"
+            android:text="disabled" />
+
+        <com.jp.materialdesignsample.view.material.MaterialButton
+            style="@style/m_light_raised_button_material_style"
+            android:text="button" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Floating action button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/floating_button"
+            style="@style/m_floating_button_material_style"
+            android:src="@android:drawable/ic_dialog_email" />
+
+        <ImageButton
+            style="@style/m_floating_mini_button_material_style"
+            android:src="@android:drawable/ic_dialog_email" />
+    </LinearLayout>
+
+</LinearLayout>
