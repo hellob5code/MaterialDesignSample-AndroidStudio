@@ -1,10 +1,9 @@
 package com.jp.materialdesignsample.fragment.material;
 
-import android.os.Bundle;
 import android.view.View;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 
 public class MaterialTextFieldSampleFragment extends BaseNavigationDrawerFragment {
     @Override
@@ -18,7 +17,7 @@ public class MaterialTextFieldSampleFragment extends BaseNavigationDrawerFragmen
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
 
     }
 }

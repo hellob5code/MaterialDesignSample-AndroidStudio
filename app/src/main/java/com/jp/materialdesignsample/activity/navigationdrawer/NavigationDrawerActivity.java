@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.activeandroid.ActiveAndroid;
 import com.jp.materialdesignsample.R;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerActivity;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.fragment.NavigationDrawerMenuFragment;
 
 public class NavigationDrawerActivity extends BaseNavigationDrawerActivity {

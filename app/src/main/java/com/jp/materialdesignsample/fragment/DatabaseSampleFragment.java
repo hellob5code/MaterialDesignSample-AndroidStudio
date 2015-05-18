@@ -1,13 +1,12 @@
 package com.jp.materialdesignsample.fragment;
 
-import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
-
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.adapter.UserListAdapter;
 import com.jp.materialdesignsample.domain.helper.ActiveAndroidDatabaseHelper;
 import com.jp.materialdesignsample.domain.model.User;
@@ -37,10 +36,23 @@ public class DatabaseSampleFragment extends BaseNavigationDrawerFragment impleme
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
         List<User> userList = ActiveAndroidDatabaseHelper.getList(User.class);
         mListAdapter = new UserListAdapter(getActivity(), userList);
+
         mUserList.setAdapter(mListAdapter);
+        mUserList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Bundle bundle = new Bundle();
+//                bundle.putParcelable("user", mListAdapter.getItem(position));
+//
+//                ObjectTransferSampleFragment fragment = new ObjectTransferSampleFragment();
+//                fragment.setArguments(bundle);
+
+                navigateTo(new ObjectTransferSampleFragment(), mListAdapter.getItem(position));
+            }
+        });
     }
 
     @Override
@@ -60,7 +72,10 @@ public class DatabaseSampleFragment extends BaseNavigationDrawerFragment impleme
     private void addUser() {
         if (!mUsernameEdtext.getText().toString().equals("")) {
             User user = new User();
-            user.Username = mUsernameEdtext.getText().toString();
+            user.setUserId("id");
+            user.setUsername(mUsernameEdtext.getText().toString());
+            user.setPassword(mUsernameEdtext.getText().toString());
+
             ActiveAndroidDatabaseHelper.saveItem(user);
 
             mListAdapter.add(user);
@@ -71,7 +86,7 @@ public class DatabaseSampleFragment extends BaseNavigationDrawerFragment impleme
     private void removeUser() {
         if (mListAdapter.getCount() > 0) {
             User user = mListAdapter.getItem(0);
-            if(ActiveAndroidDatabaseHelper.removeItem(User.class, user)) {
+            if (ActiveAndroidDatabaseHelper.removeItem(User.class, user)) {
                 mListAdapter.remove(user);
                 mListAdapter.notifyDataSetChanged();
             }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
+
     protected View mRootView;
 
     @Override
@@ -23,12 +24,12 @@ public abstract class BaseFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        loadData(savedInstanceState);
+        loadData();
     }
 
     protected abstract int getFragmentLayoutResource();
 
     protected abstract void bindView(View rootView);
 
-    protected abstract void loadData(Bundle savedInstanceState);
+    protected abstract void loadData();
 }

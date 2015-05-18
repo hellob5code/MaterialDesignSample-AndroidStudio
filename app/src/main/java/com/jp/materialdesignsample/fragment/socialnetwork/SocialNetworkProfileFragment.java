@@ -1,9 +1,8 @@
 package com.jp.materialdesignsample.fragment.socialnetwork;
 
-import android.os.Bundle;
 import android.view.View;
 
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 
 /**
  * Created by tuu.phung on 05/05/2015.
@@ -20,7 +19,7 @@ public class SocialNetworkProfileFragment extends BaseNavigationDrawerFragment {
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
 
     }
 }

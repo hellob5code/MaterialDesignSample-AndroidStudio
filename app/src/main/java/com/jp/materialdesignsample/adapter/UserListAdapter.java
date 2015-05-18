@@ -32,7 +32,7 @@ public class UserListAdapter extends BaseListAdapter<User> {
     protected void loadData(Object viewHolder, User user) {
         UserViewHolder userViewHolder = (UserViewHolder) viewHolder;
 
-        userViewHolder.mText.setText(String.format("%s %s",user.Username, user.getId().toString()));
+        userViewHolder.mText.setText(String.format("%s %s",user.getUsername(), user.getId().toString()));
     }
 
     private static class UserViewHolder {

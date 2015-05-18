@@ -1,12 +1,11 @@
 package com.jp.materialdesignsample.fragment;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.adapter.SingleLineListAdapter;
 import com.jp.materialdesignsample.fragment.material.ImageLoadingPatternFragment;
 import com.jp.materialdesignsample.fragment.material.MaterialButtonSampleFragment;
@@ -31,7 +30,7 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
         SingleLineListAdapter adapter = new SingleLineListAdapter(getActivity(), createList());
 
         menuList.setAdapter(adapter);
@@ -53,19 +52,19 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                navigateTo(new MaterialButtonSampleFragment(), true);
+                navigateTo(new MaterialButtonSampleFragment(), true, null);
                 break;
             case 1:
-                navigateTo(new MaterialTextFieldSampleFragment(), true);
+                navigateTo(new MaterialTextFieldSampleFragment(), true, null);
                 break;
             case 2:
-                navigateTo(new MaterialDialogSampleFragment(), true);
+                navigateTo(new MaterialDialogSampleFragment(), true, null);
                 break;
             case 3:
-                navigateTo(new ImageLoadingPatternFragment(), true);
+                navigateTo(new ImageLoadingPatternFragment(), true, null);
                 break;
             case 4:
-                navigateTo(new DatabaseSampleFragment(), true);
+                navigateTo(new DatabaseSampleFragment(), true, null);
                 break;
             default:
                 break;

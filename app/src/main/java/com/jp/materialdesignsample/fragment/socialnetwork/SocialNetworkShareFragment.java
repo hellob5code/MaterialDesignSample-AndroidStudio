@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 
 public class SocialNetworkShareFragment extends BaseNavigationDrawerFragment implements View.OnClickListener {
     private TextView mImagePathText;
@@ -44,7 +43,7 @@ public class SocialNetworkShareFragment extends BaseNavigationDrawerFragment imp
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
 
     }
 

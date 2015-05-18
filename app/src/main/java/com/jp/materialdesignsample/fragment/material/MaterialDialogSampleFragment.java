@@ -1,13 +1,12 @@
 package com.jp.materialdesignsample.fragment.material;
 
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.dialog.BaseDialog;
 import com.jp.materialdesignsample.dialog.DialogBuilder;
 import com.jp.materialdesignsample.dialog.OnDialogButtonClickListener;
@@ -37,7 +36,7 @@ public class MaterialDialogSampleFragment extends BaseNavigationDrawerFragment i
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
 
     }
 

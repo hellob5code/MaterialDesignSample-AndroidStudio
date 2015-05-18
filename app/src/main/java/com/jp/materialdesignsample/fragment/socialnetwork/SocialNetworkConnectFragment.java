@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.activity.navigationdrawer.BaseNavigationDrawerFragment;
+import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 
 /**
  * Created by tuu.phung on 05/05/2015.
@@ -37,7 +37,7 @@ public class SocialNetworkConnectFragment extends BaseNavigationDrawerFragment
     }
 
     @Override
-    protected void loadData(Bundle savedInstanceState) {
+    protected void loadData() {
     }
 
     @Override

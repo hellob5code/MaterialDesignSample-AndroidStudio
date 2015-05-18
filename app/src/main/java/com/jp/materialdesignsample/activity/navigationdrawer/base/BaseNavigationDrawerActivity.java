@@ -1,4 +1,4 @@
-package com.jp.materialdesignsample.activity.navigationdrawer;
+package com.jp.materialdesignsample.activity.navigationdrawer.base;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import com.jp.materialdesignsample.activity.navigationdrawer.OnNavigateListener;
 
 public abstract class BaseNavigationDrawerActivity extends FragmentActivity implements DrawerLayout.DrawerListener {
 
@@ -160,6 +162,10 @@ public abstract class BaseNavigationDrawerActivity extends FragmentActivity impl
         if (mDrawerLayout.isDrawerOpen(mDrawerMenuLayout)) {
             mDrawerLayout.closeDrawer(mDrawerMenuLayout);
         }
+    }
+
+    public final boolean isDrawerOpened() {
+        return mDrawerLayout.isDrawerOpen(mDrawerMenuLayout);
     }
 
     protected abstract int getActivityLayoutResource();
