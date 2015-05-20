@@ -10,6 +10,7 @@ import com.jp.materialdesignsample.adapter.SingleLineListAdapter;
 import com.jp.materialdesignsample.fragment.material.ImageLoadingPatternFragment;
 import com.jp.materialdesignsample.fragment.material.MaterialButtonSampleFragment;
 import com.jp.materialdesignsample.fragment.material.MaterialDialogSampleFragment;
+import com.jp.materialdesignsample.fragment.material.MaterialPickerSampleFragment;
 import com.jp.materialdesignsample.fragment.material.MaterialTextFieldSampleFragment;
 
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
         list.add("Dialog Sample");
         list.add("Image Loading Pattern");
         list.add("Database Sample");
+        list.add("Picker Sample");
 
         return list;
     }
@@ -65,6 +67,9 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
                 break;
             case 4:
                 navigateTo(new DatabaseSampleFragment(), true, null);
+                break;
+            case 5:
+                navigateTo(new MaterialPickerSampleFragment(), true, null);
                 break;
             default:
                 break;
