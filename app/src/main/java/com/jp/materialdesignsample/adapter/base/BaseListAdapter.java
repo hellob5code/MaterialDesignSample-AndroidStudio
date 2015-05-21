@@ -8,9 +8,6 @@ import android.widget.ArrayAdapter;
 
 import java.util.List;
 
-/**
- * Created by tuu.phung on 17/04/2015.
- */
 public abstract class BaseListAdapter<TData> extends ArrayAdapter<TData> {
     protected Context mContext;
     protected List<TData> mItemList;

@@ -7,8 +7,13 @@ import android.widget.Button;
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.dialog.DialogBuilder;
+import com.jp.materialdesignsample.dialog.OnDialogValueSelectedListener;
+import com.jp.materialdesignsample.domain.model.PickerItem;
 
-public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnDialogValueSelectedListener<PickerItem> {
 
     private Button mPickerButton;
 
@@ -29,6 +34,12 @@ public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment i
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+        DialogBuilder.clear();
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.pick_dialog_button:
@@ -40,7 +51,19 @@ public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment i
     }
 
     private void showPickerDialog() {
-        Dialog dialog = DialogBuilder.buildPickerDialog(getActivity(), "PickerDialog", new String[]{"value1", "value2", "value3", "value4"});
+        List<PickerItem> data = new ArrayList<>();
+        data.add(new PickerItem(1, "value 1"));
+        data.add(new PickerItem(2, "value 2"));
+        data.add(new PickerItem(3, "value 3"));
+        data.add(new PickerItem(4, "value 4"));
+
+        Dialog dialog = DialogBuilder.buildPickerDialog(getActivity(), "PickerDialog", data, this);
+        dialog.setTitle("Select item:");
         dialog.show();
+    }
+
+    @Override
+    public void onValueSelected(String tag, PickerItem selectedValue) {
+
     }
 }

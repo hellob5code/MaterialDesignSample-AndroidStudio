@@ -3,6 +3,7 @@ package com.jp.materialdesignsample.dialog;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.Window;
 
 public abstract class BaseDialog extends AlertDialog implements DialogInterface.OnClickListener {
     private String mTag = "";

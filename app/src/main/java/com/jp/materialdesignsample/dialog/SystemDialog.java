@@ -15,4 +15,11 @@ public class SystemDialog extends BaseDialog {
     protected SystemDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
     }
+
+    @Override
+    protected void initDialog(Context context) {
+        super.initDialog(context);
+
+        setButton(BUTTON_POSITIVE,"OK");
+    }
 }

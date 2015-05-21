@@ -2,12 +2,17 @@ package com.jp.materialdesignsample.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.widget.NumberPicker;
 
 import com.jp.materialdesignsample.dialog.material.MaterialAlertDialog;
 
+import java.util.List;
+
 public class DialogBuilder {
     private static BaseDialog mCurrentActiveDialog = null;
+
+    public static void clear() {
+        mCurrentActiveDialog = null;
+    }
 
     public static BaseDialog buildSystemDialog(Context context, String tag, OnDialogButtonClickListener onClickListener) {
         if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
@@ -78,21 +83,14 @@ public class DialogBuilder {
         }
     }
 
-    public static BaseDialog buildPickerDialog(Context context, String tag, String[] source) {
+    public static <T extends IPickerDialogItem> BaseDialog buildPickerDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener<T> listener) {
         if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
             return mCurrentActiveDialog;
         } else {
-            NumberPicker picker = new NumberPicker(context);
-            picker.setMinValue(0);
-            picker.setMaxValue(source.length - 1);
-            picker.setDisplayedValues(source);
-
-            SystemDialog dialog = new SystemDialog(context);
-
-            dialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK");
-            dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "CANCEL");
+            PickerDialog<T> dialog = new PickerDialog<>(context);
             dialog.setTag(tag);
-            dialog.setContentView(picker);
+            dialog.setPickerData(source);
+            dialog.setOnDialogValueSelectedListener(listener);
 
             mCurrentActiveDialog = dialog;
             return dialog;
