@@ -3,6 +3,7 @@ package com.jp.materialdesignsample.fragment.material;
 import android.app.Dialog;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
@@ -57,13 +58,13 @@ public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment i
         data.add(new PickerItem(3, "value 3"));
         data.add(new PickerItem(4, "value 4"));
 
-        Dialog dialog = DialogBuilder.buildPickerDialog(getActivity(), "PickerDialog", data, this);
+        Dialog dialog = DialogBuilder.buildMaterialSelectionDialog(getActivity(), "PickerDialog", data, this);
         dialog.setTitle("Select item:");
         dialog.show();
     }
 
     @Override
     public void onValueSelected(String tag, PickerItem selectedValue) {
-
+        Toast.makeText(getActivity(), selectedValue.getDisplayText(), Toast.LENGTH_SHORT).show();
     }
 }

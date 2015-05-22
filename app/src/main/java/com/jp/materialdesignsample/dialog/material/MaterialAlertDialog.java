@@ -19,7 +19,7 @@ public class MaterialAlertDialog extends BaseMaterialDialog implements View.OnCl
 
     @Override
     protected int getDialogLayoutResource() {
-        return R.layout.dialog_alert;
+        return R.layout.dialog_material_alert;
     }
 
     public MaterialAlertDialog(Context context) {

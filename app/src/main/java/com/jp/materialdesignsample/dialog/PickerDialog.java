@@ -59,7 +59,7 @@ public class PickerDialog<T extends IPickerDialogItem> extends BaseDialog {
             mPicker.setMaxValue(displayList.length - 1);
             mPicker.setDisplayedValues(displayList);
             mPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-
+            
             setView(mPicker);
         }
     }

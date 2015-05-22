@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import com.jp.materialdesignsample.dialog.material.MaterialAlertDialog;
+import com.jp.materialdesignsample.dialog.material.MaterialSelectionDialog;
 
 import java.util.List;
 
@@ -90,6 +91,34 @@ public class DialogBuilder {
             PickerDialog<T> dialog = new PickerDialog<>(context);
             dialog.setTag(tag);
             dialog.setPickerData(source);
+            dialog.setOnDialogValueSelectedListener(listener);
+
+            mCurrentActiveDialog = dialog;
+            return dialog;
+        }
+    }
+
+    public static <T extends IPickerDialogItem> BaseDialog buildSelectionDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener<T> listener) {
+        if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
+            return mCurrentActiveDialog;
+        } else {
+            SelectionDialog<T> dialog = new SelectionDialog<>(context);
+            dialog.setTag(tag);
+            dialog.setSelectionData(source);
+            dialog.setOnDialogValueSelectedListener(listener);
+
+            mCurrentActiveDialog = dialog;
+            return dialog;
+        }
+    }
+
+    public static <T extends IPickerDialogItem> BaseDialog buildMaterialSelectionDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener<T> listener) {
+        if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
+            return mCurrentActiveDialog;
+        } else {
+            MaterialSelectionDialog<T> dialog = new MaterialSelectionDialog<>(context);
+            dialog.setTag(tag);
+            dialog.setSelectionData(source);
             dialog.setOnDialogValueSelectedListener(listener);
 
             mCurrentActiveDialog = dialog;
