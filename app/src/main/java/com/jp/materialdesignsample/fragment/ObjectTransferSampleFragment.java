@@ -10,7 +10,7 @@ import com.jp.materialdesignsample.domain.model.User;
 public class ObjectTransferSampleFragment extends BaseNavigationDrawerParamFragment<User> {
     @Override
     protected int getFragmentLayoutResource() {
-        return R.layout.fragment_material_button_sample;
+        return 0;
     }
 
     @Override

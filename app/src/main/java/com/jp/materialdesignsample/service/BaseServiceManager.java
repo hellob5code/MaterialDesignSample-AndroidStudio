@@ -2,16 +2,23 @@ package com.jp.materialdesignsample.service;
 
 import android.util.Log;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jp.materialdesignsample.domain.model.JsonSampleItem;
 import com.jp.materialdesignsample.service.base.IServiceRequest;
+import com.jp.materialdesignsample.service.base.OnServiceResponseListener;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 
 import org.apache.http.Header;
 
+import java.io.IOException;
+import java.util.List;
+
 public class BaseServiceManager {
     private String mUrl = "";
     private TextHttpResponseHandler mHandler;
+    private OnServiceResponseListener mListener;
     private String mAuthUsername = "user";
     private String mAuthPassword = "pass";
 
@@ -29,6 +36,12 @@ public class BaseServiceManager {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 Log.d("SERVICE RESPONSE", responseString);
+//                ObjectMapper mapper = new ObjectMapper();
+//                try {
+//                    JsonSampleItem data = mapper.readValue(responseString,JsonSampleItem.class);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             }
         };
     }
