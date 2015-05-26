@@ -46,6 +46,7 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
         list.add("Image Loading Pattern");
         list.add("Database Sample");
         list.add("Picker Sample");
+        list.add("Network Status");
 
         return list;
     }
@@ -70,6 +71,9 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
                 break;
             case 5:
                 navigateTo(new MaterialPickerSampleFragment(), true, null);
+                break;
+            case 6:
+                navigateTo(new NetworkStatusFragment(), true, null);
                 break;
             default:
                 break;
