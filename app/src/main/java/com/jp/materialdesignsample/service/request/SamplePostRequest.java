@@ -4,10 +4,7 @@ import com.jp.materialdesignsample.service.base.IServiceRequest;
 
 import java.util.HashMap;
 
-/**
- * Created by tuu.phung on 26/05/2015.
- */
-public class SampleRequest implements IServiceRequest {
+public class SamplePostRequest implements IServiceRequest {
     @Override
     public HashMap<String, String> getRequestParam() {
         HashMap<String, String> param = new HashMap<>();

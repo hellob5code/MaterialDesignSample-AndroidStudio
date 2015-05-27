@@ -1,7 +1,9 @@
 package com.jp.materialdesignsample.service.base;
 
-/**
- * Created by tuu on 5/27/2015.
- */
 public interface OnServiceResponseListener {
+    void onResponseSuccess(String tag, BaseResponse response);
+
+    void onResponseFailed(String tag);
+
+    void onSerializeException(String tag, String responseString);
 }
