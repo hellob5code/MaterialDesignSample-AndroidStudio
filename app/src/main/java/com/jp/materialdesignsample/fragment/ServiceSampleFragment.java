@@ -13,6 +13,7 @@ import com.jp.materialdesignsample.service.base.OnServiceResponseListener;
 import com.jp.materialdesignsample.service.request.SamplePostRequest;
 import com.jp.materialdesignsample.service.response.SampleGetResponse;
 import com.jp.materialdesignsample.service.response.SamplePostResponse;
+import com.jp.materialdesignsample.volley.BaseServiceManager;
 
 public class ServiceSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnServiceResponseListener {
     @Override
@@ -38,11 +39,15 @@ public class ServiceSampleFragment extends BaseNavigationDrawerFragment implemen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.get_button:
-                SampleServiceManager<SampleGetResponse> getService = new SampleServiceManager<>(ServiceConstant.TAG_GET, ServiceConstant.URL_GET, SampleGetResponse.class);
-                getService.setAuthUsername(ServiceConstant.AUTH_USERNAME);
-                getService.setAuthPassword(ServiceConstant.AUTH_PASSWORD);
-                getService.setOnServiceResponseListener(this);
-                getService.getAsync();
+//                SampleServiceManager<SampleGetResponse> getService = new SampleServiceManager<>(ServiceConstant.TAG_GET, ServiceConstant.URL_GET, SampleGetResponse.class);
+//                getService.setAuthUsername(ServiceConstant.AUTH_USERNAME);
+//                getService.setAuthPassword(ServiceConstant.AUTH_PASSWORD);
+//                getService.setOnServiceResponseListener(this);
+//                getService.getAsync();
+                BaseServiceManager serviceManager = new com.jp.materialdesignsample.volley.SampleServiceManager(getActivity());
+                serviceManager.addGetRequest("TAG1", ServiceConstant.URL_GET);
+                serviceManager.addGetRequest("TAG2", ServiceConstant.URL_GET);
+                serviceManager.excute();
                 break;
             case R.id.post_button:
                 SampleServiceManager<SamplePostResponse> postService = new SampleServiceManager<>(ServiceConstant.TAG_POST, ServiceConstant.URL_POST, SamplePostResponse.class, ServiceConstant.AUTH_USERNAME, ServiceConstant.AUTH_PASSWORD);
