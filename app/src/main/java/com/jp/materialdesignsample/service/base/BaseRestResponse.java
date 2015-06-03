@@ -2,13 +2,11 @@ package com.jp.materialdesignsample.service.base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class BaseResponse<T> {
+public class BaseRestResponse<T> {
     @JsonProperty("status")
     private boolean mStatus;
-
     @JsonProperty("message")
     private String mMessage;
-
     @JsonProperty("data")
     private T mData;
 

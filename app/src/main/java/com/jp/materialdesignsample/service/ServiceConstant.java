@@ -8,5 +8,5 @@ public class ServiceConstant {
     public static final String TAG_POST = "TAG_POST";
 
     public static final String URL_GET = "http://api.ag2r-keynesoft.sutrix.com/api/v1/team";
-    public static final String URL_POST = "http://api.ag2r-keynesoft.sutrix.com/api/v1/checkemail";
+    public static final String URL_POST = "http://api.ag2r-keynesoft.sutrix.com/api/v1/login";
 }

@@ -1,21 +1,19 @@
 package com.jp.materialdesignsample.fragment;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
-import com.jp.materialdesignsample.service.SampleServiceManager;
+import com.jp.materialdesignsample.service.RestServiceManager;
 import com.jp.materialdesignsample.service.ServiceConstant;
-import com.jp.materialdesignsample.service.base.BaseResponse;
-import com.jp.materialdesignsample.service.base.OnServiceResponseListener;
-import com.jp.materialdesignsample.service.request.SamplePostRequest;
+import com.jp.materialdesignsample.service.base.BaseRestResponse;
+import com.jp.materialdesignsample.service.listener.OnServiceResponseListener;
+import com.jp.materialdesignsample.service.requestparam.SamplePostRequestParam;
 import com.jp.materialdesignsample.service.response.SampleGetResponse;
 import com.jp.materialdesignsample.service.response.SamplePostResponse;
-import com.jp.materialdesignsample.volley.BaseServiceManager;
 
-public class ServiceSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnServiceResponseListener {
+public class ServiceSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnServiceResponseListener<BaseRestResponse> {
     @Override
     protected int getFragmentLayoutResource() {
         return R.layout.fragment_service_sample;
@@ -39,36 +37,16 @@ public class ServiceSampleFragment extends BaseNavigationDrawerFragment implemen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.get_button:
-//                SampleServiceManager<SampleGetResponse> getService = new SampleServiceManager<>(ServiceConstant.TAG_GET, ServiceConstant.URL_GET, SampleGetResponse.class);
-//                getService.setAuthUsername(ServiceConstant.AUTH_USERNAME);
-//                getService.setAuthPassword(ServiceConstant.AUTH_PASSWORD);
-//                getService.setOnServiceResponseListener(this);
-//                getService.getAsync();
-                BaseServiceManager serviceManager = new com.jp.materialdesignsample.volley.SampleServiceManager(getActivity());
-                serviceManager.addGetRequest("TAG1", ServiceConstant.URL_GET);
-                serviceManager.addGetRequest("TAG2", ServiceConstant.URL_GET);
-                serviceManager.excute();
+                RestServiceManager getServiceManager = new RestServiceManager(getActivity(), ServiceConstant.TAG_GET, ServiceConstant.URL_GET, SampleGetResponse.class, this);
+                getServiceManager.executeGet();
                 break;
             case R.id.post_button:
-                SampleServiceManager<SamplePostResponse> postService = new SampleServiceManager<>(ServiceConstant.TAG_POST, ServiceConstant.URL_POST, SamplePostResponse.class, ServiceConstant.AUTH_USERNAME, ServiceConstant.AUTH_PASSWORD);
-                postService.setOnServiceResponseListener(this);
-                postService.postAsync(new SamplePostRequest());
+                RestServiceManager postServiceManager = new RestServiceManager(getActivity(), ServiceConstant.TAG_POST, ServiceConstant.URL_POST, SamplePostResponse.class, this);
+                postServiceManager.executePost(new SamplePostRequestParam());
                 break;
             default:
                 break;
         }
-    }
-
-    @Override
-    public void onResponseSuccess(String tag, BaseResponse response) {
-        switch (tag) {
-            case ServiceConstant.TAG_GET:
-                SampleGetResponse getResponse = (SampleGetResponse) response;
-                break;
-            case ServiceConstant.TAG_POST:
-                break;
-        }
-        Log.d(tag, response.getMessage());
     }
 
     @Override
@@ -77,7 +55,10 @@ public class ServiceSampleFragment extends BaseNavigationDrawerFragment implemen
     }
 
     @Override
-    public void onSerializeException(String tag, String responseString) {
+    public void onResponseSuccess(String tag, BaseRestResponse response) {
+    }
 
+    @Override
+    public void onParseError(String tag, String response) {
     }
 }

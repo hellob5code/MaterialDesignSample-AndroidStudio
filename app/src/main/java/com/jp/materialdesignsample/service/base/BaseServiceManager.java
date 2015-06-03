@@ -1,72 +1,80 @@
 package com.jp.materialdesignsample.service.base;
 
+import android.content.Context;
 import android.util.Log;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.RequestParams;
-import com.loopj.android.http.ResponseHandlerInterface;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.jp.materialdesignsample.service.listener.OnServiceResponseListener;
 
-public abstract class BaseServiceManager<T extends BaseResponse> {
-    protected String mTag = "";
-    private String mUrl = "";
-    private String mAuthUsername = "";
-    private String mAuthPassword = "";
+public abstract class BaseServiceManager<T> implements Response.ErrorListener, Response.Listener<String> {
+    private RequestQueue mRequestQueue;
+    private String mUrl;
+    private String mTag;
+    private OnServiceResponseListener<T> mListener;
 
-    private ResponseHandlerInterface mHandler;
-
-    public BaseServiceManager(String tag, String url, Class<T> responseType) {
+    public BaseServiceManager(Context context, String tag, String url, OnServiceResponseListener<T> listener) {
+        mRequestQueue = Volley.newRequestQueue(context);
         mTag = tag;
         mUrl = url;
-        mHandler = createHttpResponseHandler(responseType);
+        mListener = listener;
     }
 
-    public BaseServiceManager(String tag, String url, Class<T> responseType, String username, String password) {
-        this(tag, url, responseType);
-        mAuthUsername = username;
-        mAuthPassword = password;
+    public void executeGet() {
+        BaseRequest request = new BaseRequest(Request.Method.GET, mUrl, this, this);
+        request.setTag(mTag);
+
+        mRequestQueue.add(request);
+        mRequestQueue.start();
     }
 
-    public void getAsync() {
-        Log.d("SERVICE REQUEST", String.format("URL: %s", mUrl));
-        AsyncHttpClient client = getHttpClient(mAuthUsername, mAuthPassword);
-        client.get(mUrl, mHandler);
+    public void executePost() {
+        BaseRequest request = new BaseRequest(Request.Method.POST, mUrl, this, this);
+        request.setTag(mTag);
+
+        mRequestQueue.add(request);
+        mRequestQueue.start();
     }
 
-    public void postAsync() {
-        Log.d("SERVICE REQUEST", String.format("URL: %s", mUrl));
-        AsyncHttpClient client = getHttpClient(mAuthUsername, mAuthPassword);
-        client.post(mUrl, mHandler);
+    public void executePost(IRequestParam param) {
+        BaseRequest request = new BaseRequest(Request.Method.POST, mUrl, this, this);
+        request.addParam(param);
+        request.setTag(mTag);
+
+        mRequestQueue.add(request);
+        mRequestQueue.start();
+
+        Log.d("SERVICE REQUEST", String.format("TAG: %s PARAM: %s", mTag, param.getRequestParam().toString()));
     }
 
-    public void postAsync(IServiceRequest request) {
-        Log.d("SERVICE REQUEST", String.format("URL: %s", mUrl));
-        AsyncHttpClient client = getHttpClient(mAuthUsername, mAuthPassword);
-        client.post(mUrl, new RequestParams(request.getRequestParam()), mHandler);
-    }
-
-    public String getAuthUsername() {
-        return mAuthUsername;
-    }
-
-    public String getAuthPassword() {
-        return mAuthPassword;
-    }
-
-    public void setAuthUsername(String username) {
-        mAuthUsername = username;
-    }
-
-    public void setAuthPassword(String password) {
-        mAuthPassword = password;
-    }
-
-    protected AsyncHttpClient getHttpClient(String authUsername, String authPassword) {
-        AsyncHttpClient client = new AsyncHttpClient();
-        if (!authUsername.equals("") && !authPassword.equals("")) {
-            client.setBasicAuth(authUsername, authPassword);
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        if (mListener != null) {
+            mListener.onResponseFailed(mTag);
         }
-        return client;
+        Log.d("SERVICE FAILED", String.format("TAG: %s ERROR CODE: %d", mTag, error.networkResponse.statusCode));
     }
 
-    protected abstract ResponseHandlerInterface createHttpResponseHandler(Class<T> responseType);
+    @Override
+    public void onResponse(String responseString) {
+        try {
+            T response = parseResponse(responseString);
+            if (mListener != null) {
+                mListener.onResponseSuccess(mTag, response);
+            }
+            Log.d("SERVICE RESPONSE", String.format("TAG: %s RESPONSE: %s", mTag, responseString));
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (mListener != null) {
+                mListener.onParseError(mTag, responseString);
+            }
+            Log.d("SERVICE PARSE ERROR", String.format("TAG: %s RESPONSE: %s", mTag, responseString));
+        }
+    }
+
+    protected abstract T parseResponse(String response) throws Exception;
+
 }
