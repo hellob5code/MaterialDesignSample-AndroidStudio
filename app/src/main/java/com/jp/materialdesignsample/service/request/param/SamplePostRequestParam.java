@@ -1,4 +1,4 @@
-package com.jp.materialdesignsample.service.requestparam;
+package com.jp.materialdesignsample.service.request.param;
 
 import com.jp.materialdesignsample.service.base.IRequestParam;
 

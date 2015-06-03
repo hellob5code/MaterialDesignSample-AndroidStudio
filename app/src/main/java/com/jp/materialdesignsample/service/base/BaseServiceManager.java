@@ -24,7 +24,7 @@ public abstract class BaseServiceManager<T> implements Response.ErrorListener, R
     }
 
     public void executeGet() {
-        BaseRequest request = new BaseRequest(Request.Method.GET, mUrl, this, this);
+        BaseRequest request = createRequest(Request.Method.GET, mUrl, this, this);
         request.setTag(mTag);
 
         mRequestQueue.add(request);
@@ -32,7 +32,7 @@ public abstract class BaseServiceManager<T> implements Response.ErrorListener, R
     }
 
     public void executePost() {
-        BaseRequest request = new BaseRequest(Request.Method.POST, mUrl, this, this);
+        BaseRequest request = createRequest(Request.Method.POST, mUrl, this, this);
         request.setTag(mTag);
 
         mRequestQueue.add(request);
@@ -40,14 +40,16 @@ public abstract class BaseServiceManager<T> implements Response.ErrorListener, R
     }
 
     public void executePost(IRequestParam param) {
-        BaseRequest request = new BaseRequest(Request.Method.POST, mUrl, this, this);
-        request.addParam(param);
+        BaseRequest request = createRequest(Request.Method.POST, mUrl, this, this);
         request.setTag(mTag);
+
+        if (param != null) {
+            request.addParam(param);
+            Log.d("SERVICE REQUEST", String.format("TAG: %s PARAM: %s", mTag, param.getRequestParam().toString()));
+        }
 
         mRequestQueue.add(request);
         mRequestQueue.start();
-
-        Log.d("SERVICE REQUEST", String.format("TAG: %s PARAM: %s", mTag, param.getRequestParam().toString()));
     }
 
     @Override
@@ -74,6 +76,8 @@ public abstract class BaseServiceManager<T> implements Response.ErrorListener, R
             Log.d("SERVICE PARSE ERROR", String.format("TAG: %s RESPONSE: %s", mTag, responseString));
         }
     }
+
+    protected abstract BaseRequest createRequest(int method, String url, Response.Listener<String> listener, Response.ErrorListener errorListener);
 
     protected abstract T parseResponse(String response) throws Exception;
 

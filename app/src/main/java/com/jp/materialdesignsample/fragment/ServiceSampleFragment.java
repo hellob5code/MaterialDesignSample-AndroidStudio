@@ -9,7 +9,7 @@ import com.jp.materialdesignsample.service.RestServiceManager;
 import com.jp.materialdesignsample.service.ServiceConstant;
 import com.jp.materialdesignsample.service.base.BaseRestResponse;
 import com.jp.materialdesignsample.service.listener.OnServiceResponseListener;
-import com.jp.materialdesignsample.service.requestparam.SamplePostRequestParam;
+import com.jp.materialdesignsample.service.request.param.SamplePostRequestParam;
 import com.jp.materialdesignsample.service.response.SampleGetResponse;
 import com.jp.materialdesignsample.service.response.SamplePostResponse;
 
