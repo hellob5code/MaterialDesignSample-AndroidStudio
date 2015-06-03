@@ -53,7 +53,7 @@ public class MaterialSampleFragment extends BaseNavigationDrawerFragment impleme
                 navigateTo(new MaterialPickerSampleFragment(), null);
                 break;
             case R.id.material_image_loading_sample_button:
-                navigateTo(new ImageLoadingPatternFragment(), null);
+                navigateTo(new MaterialImageLoadingFragment(), null);
                 break;
             default:
                 break;

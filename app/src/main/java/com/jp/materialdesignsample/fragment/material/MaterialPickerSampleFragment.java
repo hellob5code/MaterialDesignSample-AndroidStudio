@@ -16,8 +16,6 @@ import java.util.List;
 
 public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnDialogValueSelectedListener<PickerItem> {
 
-    private Button mPickerButton;
-
     @Override
     protected int getFragmentLayoutResource() {
         return R.layout.fragment_picker_sample;
@@ -25,9 +23,9 @@ public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment i
 
     @Override
     protected void bindView(View rootView) {
-        mPickerButton = (Button) rootView.findViewById(R.id.pick_dialog_button);
+        Button pickerButton = (Button) rootView.findViewById(R.id.pick_dialog_button);
 
-        mPickerButton.setOnClickListener(this);
+        pickerButton.setOnClickListener(this);
     }
 
     @Override

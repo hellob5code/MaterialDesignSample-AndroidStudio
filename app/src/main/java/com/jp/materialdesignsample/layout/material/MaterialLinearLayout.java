@@ -6,9 +6,6 @@ import android.view.View;
 
 import com.jp.materialdesignsample.layout.base.BaseLinearLayout;
 
-/**
- * Created by tuu.phung on 28/04/2015.
- */
 public class MaterialLinearLayout extends BaseLinearLayout {
     public MaterialLinearLayout(Context context) {
         super(context);

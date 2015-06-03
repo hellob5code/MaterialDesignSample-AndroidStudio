@@ -6,9 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/**
- * Created by tuu.phung on 28/04/2015.
- */
 public abstract class BaseLinearLayout extends LinearLayout {
     protected Context mContext;
     private View mRootView;

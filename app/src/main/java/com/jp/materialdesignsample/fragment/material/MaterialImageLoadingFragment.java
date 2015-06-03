@@ -7,7 +7,7 @@ import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.view.material.MaterialImageView;
 
-public class ImageLoadingPatternFragment extends BaseNavigationDrawerFragment implements View.OnClickListener {
+public class MaterialImageLoadingFragment extends BaseNavigationDrawerFragment implements View.OnClickListener {
     private Button mLoadImageButton;
     private Button mClearImageButton;
     private MaterialImageView mMaterialImage;
