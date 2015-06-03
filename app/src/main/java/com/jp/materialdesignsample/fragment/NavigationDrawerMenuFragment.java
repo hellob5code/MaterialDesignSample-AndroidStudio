@@ -7,11 +7,7 @@ import android.widget.ListView;
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.adapter.SingleLineListAdapter;
-import com.jp.materialdesignsample.fragment.material.ImageLoadingPatternFragment;
-import com.jp.materialdesignsample.fragment.material.MaterialButtonSampleFragment;
-import com.jp.materialdesignsample.fragment.material.MaterialDialogSampleFragment;
-import com.jp.materialdesignsample.fragment.material.MaterialPickerSampleFragment;
-import com.jp.materialdesignsample.fragment.material.MaterialTextFieldSampleFragment;
+import com.jp.materialdesignsample.fragment.material.MaterialSampleFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +36,8 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
     private List<String> createList() {
         ArrayList<String> list = new ArrayList<>();
 
-        list.add("Button Sample");
-        list.add("Text field Sample");
-        list.add("Dialog Sample");
-        list.add("Image Loading Pattern");
+        list.add("Material Samples");
         list.add("Database Sample");
-        list.add("Picker Sample");
         list.add("Service Sample");
         list.add("Network Status");
 
@@ -56,27 +48,15 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                navigateTo(new MaterialButtonSampleFragment(), true, null);
+                navigateTo(new MaterialSampleFragment(), true, null);
                 break;
             case 1:
-                navigateTo(new MaterialTextFieldSampleFragment(), true, null);
-                break;
-            case 2:
-                navigateTo(new MaterialDialogSampleFragment(), true, null);
-                break;
-            case 3:
-                navigateTo(new ImageLoadingPatternFragment(), true, null);
-                break;
-            case 4:
                 navigateTo(new DatabaseSampleFragment(), true, null);
                 break;
-            case 5:
-                navigateTo(new MaterialPickerSampleFragment(), true, null);
-                break;
-            case 6:
+            case 2:
                 navigateTo(new ServiceSampleFragment(), true, null);
                 break;
-            case 7:
+            case 3:
                 navigateTo(new NetworkStatusFragment(), true, null);
                 break;
             default:

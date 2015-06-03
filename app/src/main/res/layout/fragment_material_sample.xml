@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/material_button_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Button Sample"/>
+
+    <Button
+        android:id="@+id/material_text_field_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Text Field Sample"/>
+
+    <Button
+        android:id="@+id/material_dialog_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Dialog Sample"/>
+
+    <Button
+        android:id="@+id/material_picker_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Picker Sample"/>
+
+    <Button
+        android:id="@+id/material_image_loading_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Image Loading Sample"/>
+</LinearLayout>

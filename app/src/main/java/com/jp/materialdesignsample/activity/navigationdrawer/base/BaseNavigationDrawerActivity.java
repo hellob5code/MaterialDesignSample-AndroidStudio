@@ -1,16 +1,20 @@
 package com.jp.materialdesignsample.activity.navigationdrawer.base;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.jp.materialdesignsample.activity.navigationdrawer.OnNavigateListener;
 
 public abstract class BaseNavigationDrawerActivity extends FragmentActivity implements DrawerLayout.DrawerListener {
+    private boolean mWillExitApp = false;
+    private static final int DELAY_TIME_TO_EXIT = 2 * 1000; // 2 seconds delay
 
     private OnNavigateListener mNavigateListener;
     private BaseNavigationDrawerFragment mFragment;
@@ -31,20 +35,6 @@ public abstract class BaseNavigationDrawerActivity extends FragmentActivity impl
 
         initMenuFragment();
         initContentFragment();
-
-//        getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-//            @Override
-//            public void onBackStackChanged() {
-//                String fragments = "";
-//                for (Fragment backStackFragment : getSupportFragmentManager().getFragments()) {
-//                    if (backStackFragment != null) {
-//                        fragments += String.format("[%s]", backStackFragment.getClass().getSimpleName());
-//                    }
-//                }
-//
-//                Log.d("NAVIGATION", String.format("BACK STACK COUNT %d %s", getSupportFragmentManager().getBackStackEntryCount(), fragments));
-//            }
-//        });
     }
 
     @Override
@@ -52,7 +42,19 @@ public abstract class BaseNavigationDrawerActivity extends FragmentActivity impl
         if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
             super.onBackPressed();
         } else {
-            finish();
+            if (mWillExitApp) {
+                finish();
+            } else {
+                mWillExitApp = true;
+                Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mWillExitApp = false;
+                    }
+                }, DELAY_TIME_TO_EXIT);
+            }
         }
     }
 
