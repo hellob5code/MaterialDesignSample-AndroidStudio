@@ -36,6 +36,7 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
     private List<String> createList() {
         ArrayList<String> list = new ArrayList<>();
 
+        list.add("Device Info");
         list.add("Material Samples");
         list.add("Database Sample");
         list.add("Service Sample");
@@ -48,15 +49,18 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                navigateTo(new MaterialSampleFragment(), true, null);
+                navigateTo(new DeviceInfoFragment(), true, null);
                 break;
             case 1:
-                navigateTo(new DatabaseSampleFragment(), true, null);
+                navigateTo(new MaterialSampleFragment(), true, null);
                 break;
             case 2:
-                navigateTo(new ServiceSampleFragment(), true, null);
+                navigateTo(new DatabaseSampleFragment(), true, null);
                 break;
             case 3:
+                navigateTo(new ServiceSampleFragment(), true, null);
+                break;
+            case 4:
                 navigateTo(new NetworkStatusFragment(), true, null);
                 break;
             default:

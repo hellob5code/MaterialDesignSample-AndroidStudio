@@ -14,10 +14,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WIFI status: " />
+            android:text="DENSITY: " />
 
         <TextView
-            android:id="@+id/wifi_status_text"
+            android:id="@+id/screen_info_density_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -30,12 +30,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3G status: " />
+            android:text="SCREEN SIZE: " />
 
         <TextView
-            android:id="@+id/mobile_status_text"
+            android:id="@+id/screen_info_size_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
 </LinearLayout>
