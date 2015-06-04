@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <com.jp.materialdesignsample.view.material.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DENSITY: " />
@@ -27,13 +27,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <com.jp.materialdesignsample.view.material.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SCREEN SIZE: " />
 
         <TextView
             android:id="@+id/screen_info_size_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.jp.materialdesignsample.view.material.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="ANDROID SDK: " />
+
+        <TextView
+            android:id="@+id/device_info_sdk_version_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
