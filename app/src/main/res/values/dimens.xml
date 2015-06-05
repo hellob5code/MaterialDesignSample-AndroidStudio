@@ -48,6 +48,10 @@
     <dimen name="m_list_vertical_padding">16dp</dimen>
     <dimen name="m_list_single_line_text_bottom_padding">4dp</dimen>
 
+    <!-- Spinner -->
+    <dimen name="m_spinner_layout_height">48dp</dimen>
+    <dimen name="m_spinner_vertical_padding">16dp</dimen>
+
     <!-- Dialog -->
     <dimen name="m_dialog_width">280dp</dimen>
     <dimen name="m_dialog_text_margin">24dp</dimen>

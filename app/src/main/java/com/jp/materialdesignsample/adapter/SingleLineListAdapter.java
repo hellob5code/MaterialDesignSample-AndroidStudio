@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.jp.materialdesignsample.R;
-import com.jp.materialdesignsample.adapter.base.BaseListAdapter;
+import com.jp.materialdesignsample.view.listview.BaseListAdapter;
 
 import java.util.List;
 

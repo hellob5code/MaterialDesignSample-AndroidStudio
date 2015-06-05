@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/m_dialog_width"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -10,23 +11,24 @@
         style="@style/m_dialog_title_layout_material_style"
         android:visibility="gone">
 
-        <TextView
+        <com.jp.materialdesignsample.view.material.MaterialTextView
             android:id="@+id/dialog_title_text"
+            app:displayType="title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="21sp"
-            android:textStyle="bold" />
+            android:textColor="@color/m_black_87" />
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/dialog_message_layout"
         style="@style/m_dialog_message_layout_material_style">
 
-        <TextView
+        <com.jp.materialdesignsample.view.material.MaterialTextView
             android:id="@+id/dialog_message_text"
+            app:displayType="body1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp" />
+            android:textColor="@color/m_black_54" />
     </FrameLayout>
 
     <LinearLayout

@@ -11,4 +11,14 @@
     <com.jp.materialdesignsample.layout.material.MaterialPickerLayout
         android:id="@+id/material_picker_layout"
         style="@style/m_text_layout_material_style" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <com.jp.materialdesignsample.view.spinner.SampleSpinner
+        android:id="@+id/spinner_popup"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
 </LinearLayout>

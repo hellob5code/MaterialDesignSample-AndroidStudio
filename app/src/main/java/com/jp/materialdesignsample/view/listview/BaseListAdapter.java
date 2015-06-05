@@ -1,4 +1,4 @@
-package com.jp.materialdesignsample.adapter.base;
+package com.jp.materialdesignsample.view.listview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
