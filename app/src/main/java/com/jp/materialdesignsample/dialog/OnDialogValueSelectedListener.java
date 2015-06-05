@@ -1,5 +1,5 @@
 package com.jp.materialdesignsample.dialog;
 
-public interface OnDialogValueSelectedListener<T extends IPickerDialogItem> {
-    void onValueSelected(String tag, T selectedValue);
+public interface OnDialogValueSelectedListener {
+    void onValueSelected(String tag, int position);
 }

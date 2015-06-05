@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jp.materialdesignsample.layout.material.MaterialTextLayout
+        android:id="@+id/material_text_layout"
+        style="@style/m_text_layout_material_style" />
+
+    <com.jp.materialdesignsample.layout.material.MaterialPickerLayout
+        android:id="@+id/material_picker_layout"
+        style="@style/m_text_layout_material_style" />
+</LinearLayout>

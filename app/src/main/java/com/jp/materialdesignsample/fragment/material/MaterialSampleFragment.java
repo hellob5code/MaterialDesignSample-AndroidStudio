@@ -21,12 +21,14 @@ public class MaterialSampleFragment extends BaseNavigationDrawerFragment impleme
     protected void bindView(View rootView) {
         Button btnButtonSample = (Button) rootView.findViewById(R.id.material_button_sample_button);
         Button btnTextFieldSample = (Button) rootView.findViewById(R.id.material_text_field_sample_button);
+        Button btnLayoutSample = (Button) rootView.findViewById(R.id.material_layout_sample_button);
         Button btnDialogSample = (Button) rootView.findViewById(R.id.material_dialog_sample_button);
         Button btnPickerSample = (Button) rootView.findViewById(R.id.material_picker_sample_button);
         Button btnImageLoadingSample = (Button) rootView.findViewById(R.id.material_image_loading_sample_button);
 
         btnButtonSample.setOnClickListener(this);
         btnTextFieldSample.setOnClickListener(this);
+        btnLayoutSample.setOnClickListener(this);
         btnDialogSample.setOnClickListener(this);
         btnPickerSample.setOnClickListener(this);
         btnImageLoadingSample.setOnClickListener(this);
@@ -45,6 +47,9 @@ public class MaterialSampleFragment extends BaseNavigationDrawerFragment impleme
                 break;
             case R.id.material_text_field_sample_button:
                 navigateTo(new MaterialTextFieldSampleFragment(), null);
+                break;
+            case R.id.material_layout_sample_button:
+                navigateTo(new MaterialLayoutSample(), null);
                 break;
             case R.id.material_dialog_sample_button:
                 navigateTo(new MaterialDialogSampleFragment(), null);

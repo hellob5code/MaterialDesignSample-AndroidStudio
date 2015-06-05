@@ -84,7 +84,7 @@ public class DialogBuilder {
         }
     }
 
-    public static <T extends IPickerDialogItem> BaseDialog buildPickerDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener<T> listener) {
+    public static <T extends IPickerDialogItem> BaseDialog buildPickerDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener listener) {
         if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
             return mCurrentActiveDialog;
         } else {
@@ -98,7 +98,7 @@ public class DialogBuilder {
         }
     }
 
-    public static <T extends IPickerDialogItem> BaseDialog buildSelectionDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener<T> listener) {
+    public static <T extends IPickerDialogItem> BaseDialog buildSelectionDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener listener) {
         if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
             return mCurrentActiveDialog;
         } else {
@@ -112,7 +112,7 @@ public class DialogBuilder {
         }
     }
 
-    public static <T extends IPickerDialogItem> BaseDialog buildMaterialSelectionDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener<T> listener) {
+    public static <T extends IPickerDialogItem> BaseDialog buildMaterialSelectionDialog(Context context, String tag, List<T> source, OnDialogValueSelectedListener listener) {
         if (mCurrentActiveDialog != null && mCurrentActiveDialog.getTag().equals(tag)) {
             return mCurrentActiveDialog;
         } else {

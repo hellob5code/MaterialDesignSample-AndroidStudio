@@ -17,6 +17,12 @@
         android:text="Material Text Field Sample"/>
 
     <Button
+        android:id="@+id/material_layout_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Layout Sample"/>
+
+    <Button
         android:id="@+id/material_dialog_sample_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

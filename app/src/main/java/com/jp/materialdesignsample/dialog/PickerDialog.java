@@ -3,14 +3,14 @@ package com.jp.materialdesignsample.dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.NumberPicker;
-import android.widget.Toast;
 
 import java.util.List;
 
 public class PickerDialog<T extends IPickerDialogItem> extends BaseDialog {
-    private OnDialogValueSelectedListener<T> mListener;
+    private OnDialogValueSelectedListener mListener;
     private List<T> mItemList;
     private NumberPicker mPicker;
+    private int mSelectedPosition = -1;
 
     protected PickerDialog(Context context) {
         super(context);
@@ -36,16 +36,15 @@ public class PickerDialog<T extends IPickerDialogItem> extends BaseDialog {
     public void onClick(DialogInterface dialog, int which) {
         if (which == BUTTON_POSITIVE && mListener != null) {
             if (mPicker != null) {
-                int selectedPosition = mPicker.getValue();
-                mListener.onValueSelected(getTag(), mItemList.get(selectedPosition));
-                Toast.makeText(mContext, String.format("%s selected", mItemList.get(selectedPosition).getDisplayText()), Toast.LENGTH_SHORT).show();
+                mSelectedPosition = mPicker.getValue();
+                mListener.onValueSelected(getTag(), mSelectedPosition);
             } else {
-                mListener.onValueSelected(getTag(), null);
+                mListener.onValueSelected(getTag(), -1);
             }
         }
     }
 
-    public void setOnDialogValueSelectedListener(OnDialogValueSelectedListener<T> onDialogValueSelectedListener) {
+    public void setOnDialogValueSelectedListener(OnDialogValueSelectedListener onDialogValueSelectedListener) {
         mListener = onDialogValueSelectedListener;
     }
 
@@ -59,7 +58,7 @@ public class PickerDialog<T extends IPickerDialogItem> extends BaseDialog {
             mPicker.setMaxValue(displayList.length - 1);
             mPicker.setDisplayedValues(displayList);
             mPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-            
+
             setView(mPicker);
         }
     }
@@ -68,6 +67,13 @@ public class PickerDialog<T extends IPickerDialogItem> extends BaseDialog {
         if (mPicker != null) {
             mPicker.setValue(position);
         }
+    }
+
+    public T getSelectedItem() {
+        if (mSelectedPosition != -1) {
+            return mItemList.get(mSelectedPosition);
+        }
+        return null;
     }
 
     private String[] createDisplayList(List<T> dataList) {

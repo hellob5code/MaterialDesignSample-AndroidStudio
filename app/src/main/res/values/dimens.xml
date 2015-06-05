@@ -53,4 +53,10 @@
     <dimen name="m_dialog_text_margin">24dp</dimen>
     <dimen name="m_dialog_title_bottom_margin">20dp</dimen>
     <dimen name="m_dialog_button_margin">8dp</dimen>
+
+    <!-- Text layout -->
+    <dimen name="m_text_layout_height">72dp</dimen>
+    <dimen name="m_text_layout_vertical_padding">16dp</dimen>
+    <dimen name="m_text_layout_primary_text_size">16sp</dimen>
+    <dimen name="m_text_layout_secondary_text_size">14dp</dimen>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.jp.materialdesignsample.view.material.MaterialTextView
+        android:id="@+id/material_text_layout_primary_text"
+        style="@style/m_text_layout_primary_text_material_style" />
+
+    <com.jp.materialdesignsample.view.material.MaterialTextView
+        android:id="@+id/material_text_layout_secondary_text"
+        style="@style/m_text_layout_secondary_text_material_style" />
+</merge>

@@ -8,7 +8,9 @@ import android.widget.LinearLayout;
 
 public abstract class BaseLinearLayout extends LinearLayout {
     protected Context mContext;
-    private View mRootView;
+    protected View mRootView;
+
+    protected abstract int getLayoutResource();
 
     public BaseLinearLayout(Context context) {
         super(context);
@@ -37,7 +39,4 @@ public abstract class BaseLinearLayout extends LinearLayout {
     }
 
     protected abstract void bindView(View rootView);
-
-    protected abstract int getLayoutResource();
-
 }

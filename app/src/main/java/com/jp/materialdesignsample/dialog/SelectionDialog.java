@@ -9,7 +9,7 @@ import android.widget.ListView;
 import java.util.List;
 
 public class SelectionDialog<T extends IPickerDialogItem> extends BaseDialog implements AdapterView.OnItemClickListener {
-    private OnDialogValueSelectedListener<T> mListener;
+    private OnDialogValueSelectedListener mListener;
     private List<T> mItemList;
     private int mSelectedPosition = -1;
 
@@ -25,7 +25,7 @@ public class SelectionDialog<T extends IPickerDialogItem> extends BaseDialog imp
         super(context, cancelable, cancelListener);
     }
 
-    public void setOnDialogValueSelectedListener(OnDialogValueSelectedListener<T> onDialogValueSelectedListener) {
+    public void setOnDialogValueSelectedListener(OnDialogValueSelectedListener onDialogValueSelectedListener) {
         mListener = onDialogValueSelectedListener;
     }
 
@@ -73,7 +73,7 @@ public class SelectionDialog<T extends IPickerDialogItem> extends BaseDialog imp
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (mListener != null) {
             mSelectedPosition = position;
-            mListener.onValueSelected(getTag(), mItemList.get(position));
+            mListener.onValueSelected(getTag(), mSelectedPosition);
         }
 
         dismiss();

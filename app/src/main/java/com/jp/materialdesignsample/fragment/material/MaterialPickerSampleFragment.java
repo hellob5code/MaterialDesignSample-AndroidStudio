@@ -3,18 +3,17 @@ package com.jp.materialdesignsample.fragment.material;
 import android.app.Dialog;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.dialog.DialogBuilder;
+import com.jp.materialdesignsample.dialog.IPickerDialogItem;
 import com.jp.materialdesignsample.dialog.OnDialogValueSelectedListener;
-import com.jp.materialdesignsample.domain.model.PickerItem;
+import com.jp.materialdesignsample.utils.DummyBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnDialogValueSelectedListener<PickerItem> {
+public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment implements View.OnClickListener, OnDialogValueSelectedListener {
 
     @Override
     protected int getFragmentLayoutResource() {
@@ -50,11 +49,7 @@ public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment i
     }
 
     private void showPickerDialog() {
-        List<PickerItem> data = new ArrayList<>();
-        data.add(new PickerItem(1, "value 1"));
-        data.add(new PickerItem(2, "value 2"));
-        data.add(new PickerItem(3, "value 3"));
-        data.add(new PickerItem(4, "value 4"));
+        List<IPickerDialogItem> data = DummyBuilder.buildDummyPickerList();
 
         Dialog dialog = DialogBuilder.buildMaterialSelectionDialog(getActivity(), "PickerDialog", data, this);
         dialog.setTitle("Select item:");
@@ -62,7 +57,6 @@ public class MaterialPickerSampleFragment extends BaseNavigationDrawerFragment i
     }
 
     @Override
-    public void onValueSelected(String tag, PickerItem selectedValue) {
-        Toast.makeText(getActivity(), selectedValue.getDisplayText(), Toast.LENGTH_SHORT).show();
+    public void onValueSelected(String tag, int position) {
     }
 }

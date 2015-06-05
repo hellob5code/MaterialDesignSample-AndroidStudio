@@ -21,7 +21,7 @@ public class MaterialSelectionDialog<T extends IPickerDialogItem> extends BaseMa
     private ListView mListView;
     private MaterialButton mNegativeButton;
 
-    private OnDialogValueSelectedListener<T> mListener;
+    private OnDialogValueSelectedListener mListener;
     private List<T> mItemList;
     private int mSelectedPosition = -1;
 
@@ -102,9 +102,9 @@ public class MaterialSelectionDialog<T extends IPickerDialogItem> extends BaseMa
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mSelectedPosition = position;
         if (mListener != null) {
-            mSelectedPosition = position;
-            mListener.onValueSelected(getTag(), mItemList.get(position));
+            mListener.onValueSelected(getTag(), mSelectedPosition);
         }
 
         onClick(this, BUTTON_NEGATIVE);
@@ -114,7 +114,7 @@ public class MaterialSelectionDialog<T extends IPickerDialogItem> extends BaseMa
         setButton(BUTTON_NEGATIVE, "CANCEL");
     }
 
-    public void setOnDialogValueSelectedListener(OnDialogValueSelectedListener<T> onDialogValueSelectedListener) {
+    public void setOnDialogValueSelectedListener(OnDialogValueSelectedListener onDialogValueSelectedListener) {
         mListener = onDialogValueSelectedListener;
     }
 
@@ -135,6 +135,10 @@ public class MaterialSelectionDialog<T extends IPickerDialogItem> extends BaseMa
             return mItemList.get(mSelectedPosition);
         }
         return null;
+    }
+
+    public int getSelectedItemPosition() {
+        return mSelectedPosition;
     }
 
     private String[] createDisplayList(List<T> dataList) {

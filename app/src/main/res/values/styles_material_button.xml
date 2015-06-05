@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material image button style -->
+    <style name="m_image_button_material_style">
+        <item name="android:layout_width">@dimen/m_image_button_width</item>
+        <item name="android:layout_height">@dimen/m_image_button_height</item>
+        <item name="android:padding">@dimen/m_image_button_padding</item>
+        <item name="android:background">@color/m_clear</item>
+    </style>
+
+    <!-- Material button styles -->
+    <style name="m_button_material_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/m_button_height</item>
+        <item name="android:layout_marginLeft">@dimen/m_button_vertical_margin</item>
+        <item name="android:layout_marginRight">@dimen/m_button_vertical_margin</item>
+        <item name="android:paddingLeft">@dimen/m_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/m_button_vertical_padding</item>
+        <item name="android:minWidth">@dimen/m_button_min_width</item>
+        <item name="android:textSize">@dimen/m_button_text_size</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="m_dark_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_dark_flat_button</item>
+        <item name="android:background">@drawable/bg_dark_flat_button</item>
+    </style>
+
+    <style name="m_dark_primary_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_primary_flat_button</item>
+        <item name="android:background">@drawable/bg_dark_flat_button</item>
+    </style>
+
+    <style name="m_dark_primary_raised_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_dark_flat_button</item>
+        <item name="android:background">@drawable/bg_dark_primary_raised_button</item>
+    </style>
+
+    <style name="m_light_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_light_flat_button</item>
+        <item name="android:background">@drawable/bg_light_flat_button</item>
+    </style>
+
+    <style name="m_light_primary_flat_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_primary_flat_button</item>
+        <item name="android:background">@drawable/bg_light_flat_button</item>
+    </style>
+
+    <style name="m_light_raised_button_material_style" parent="@style/m_button_material_style">
+        <item name="android:textColor">@color/color_light_raised_button</item>
+        <item name="android:background">@drawable/bg_light_raised_button</item>
+    </style>
+
+    <!-- Material floating action button styles -->
+    <style name="m_floating_button_material_style">
+        <item name="android:layout_width">@dimen/m_floating_button_size</item>
+        <item name="android:layout_height">@dimen/m_floating_button_size</item>
+        <item name="android:padding">@dimen/m_floating_button_image_padding</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/bg_floating_button</item>
+    </style>
+
+    <style name="m_floating_mini_button_material_style">
+        <item name="android:layout_width">@dimen/m_floating_mini_button_touch_area</item>
+        <item name="android:layout_height">@dimen/m_floating_mini_button_touch_area</item>
+        <item name="android:padding">@dimen/m_floating_mini_button_image_padding</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/bg_floating_mini_button</item>
+    </style>
+</resources>
