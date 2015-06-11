@@ -39,4 +39,6 @@ dependencies {
             [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.1'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.1']
     )
+    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.google.android.gms:play-services-drive:7.5.0'
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 
+import com.jp.materialdesignsample.activity.navigationdrawer.OnActivityResultListener;
 import com.jp.materialdesignsample.activity.navigationdrawer.OnNavigateListener;
 import com.jp.materialdesignsample.fragment.base.BaseFragment;
 
@@ -34,6 +35,9 @@ public abstract class BaseNavigationDrawerFragment extends BaseFragment {
         if (!getToolbarTitle().equals("")) {
             mNavigationActivity.updateToolbarOnFragmentStart(getToolbarTitle());
         }
+        if (this instanceof OnActivityResultListener) {
+            mNavigationActivity.setOnActivityResultListener((OnActivityResultListener) this);
+        }
     }
 
     @Override
@@ -48,6 +52,7 @@ public abstract class BaseNavigationDrawerFragment extends BaseFragment {
     public void onStop() {
         super.onStop();
         mNavigationActivity.updateToolbarOnFragmentStop();
+        mNavigationActivity.setOnActivityResultListener(null);
     }
 
     protected void refreshFragment() {

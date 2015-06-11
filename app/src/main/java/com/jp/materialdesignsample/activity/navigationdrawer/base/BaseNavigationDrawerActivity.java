@@ -1,5 +1,6 @@
 package com.jp.materialdesignsample.activity.navigationdrawer.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.jp.materialdesignsample.activity.navigationdrawer.OnActivityResultListener;
 import com.jp.materialdesignsample.activity.navigationdrawer.OnNavigateListener;
 
 public abstract class BaseNavigationDrawerActivity extends FragmentActivity implements DrawerLayout.DrawerListener {
@@ -17,6 +19,7 @@ public abstract class BaseNavigationDrawerActivity extends FragmentActivity impl
     private static final int DELAY_TIME_TO_EXIT = 2 * 1000; // 2 seconds delay
 
     private OnNavigateListener mNavigateListener;
+    private OnActivityResultListener mActivityResultListener;
     private BaseNavigationDrawerFragment mFragment;
 
     protected DrawerLayout mDrawerLayout;
@@ -35,6 +38,14 @@ public abstract class BaseNavigationDrawerActivity extends FragmentActivity impl
 
         initMenuFragment();
         initContentFragment();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (mActivityResultListener != null) {
+            mActivityResultListener.onHandleActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override
@@ -83,6 +94,10 @@ public abstract class BaseNavigationDrawerActivity extends FragmentActivity impl
     public void setOnNavigateListener(OnNavigateListener onNavigateListener, BaseNavigationDrawerFragment fragment) {
         mNavigateListener = onNavigateListener;
         mFragment = fragment;
+    }
+
+    public void setOnActivityResultListener(OnActivityResultListener onActivityResultListener) {
+        mActivityResultListener = onActivityResultListener;
     }
 
     public void updateToolbarOnFragmentStart(String title) {

@@ -7,6 +7,7 @@ import android.widget.ListView;
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
 import com.jp.materialdesignsample.adapter.SingleLineListAdapter;
+import com.jp.materialdesignsample.fragment.googleservice.GoogleServiceSampleFragment;
 import com.jp.materialdesignsample.fragment.material.MaterialSampleFragment;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
         list.add("Material Samples");
         list.add("Database Sample");
         list.add("Service Sample");
+        list.add("Google Service Sample");
         list.add("Network Status");
 
         return list;
@@ -61,6 +63,9 @@ public class NavigationDrawerMenuFragment extends BaseNavigationDrawerFragment i
                 navigateTo(new ServiceSampleFragment(), true, null);
                 break;
             case 4:
+                navigateTo(new GoogleServiceSampleFragment(), true, null);
+                break;
+            case 5:
                 navigateTo(new NetworkStatusFragment(), true, null);
                 break;
             default:

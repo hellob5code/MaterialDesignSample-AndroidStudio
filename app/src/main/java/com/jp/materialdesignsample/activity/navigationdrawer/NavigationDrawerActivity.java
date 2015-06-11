@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.activeandroid.ActiveAndroid;
+import com.activeandroid.util.Log;
 import com.jp.materialdesignsample.R;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerActivity;
 import com.jp.materialdesignsample.activity.navigationdrawer.base.BaseNavigationDrawerFragment;
@@ -53,6 +54,7 @@ public class NavigationDrawerActivity extends BaseNavigationDrawerActivity {
         super.onCreate(savedInstanceState);
         ActiveAndroid.initialize(this);
         mTitleTextView = (TextView) findViewById(R.id.toolbar_title_text);
+        Log.setEnabled(true);
     }
 
     @Override
